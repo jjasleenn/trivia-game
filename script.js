@@ -105,6 +105,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function saveScore(username, score) {
+        const scores = JSON.parse(localStorage.getItem("scores")) || [];
+        scores.push({ username, score });
+        localStorage.setItem("scores", JSON.stringify(scores));
+        displayScores();
+    }
+
+
     function calculateScore() {
         let score = 0;
         document.querySelectorAll("input[type=radio]:checked").forEach((input) => {
