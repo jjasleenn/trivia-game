@@ -113,9 +113,20 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", function (event) {
         event.preventDefault();
         //... form submission logic including setting cookies and calculating score
+        const username = usernameInput.value.trim();
+        if (!username) {
+            alert("Please enter your name.");
+            return;
+        }
+        setCookie("username", username, 7);
+        usernameInput.disabled = true;
+        newPlayerButton.classList.remove("hidden");
+        const score = calculateScore();
+        saveScore(username, score);
+        alert(`Game over! Your score: ${score}`);
+        fetchQuestions();
     });
-
-   
+  
     newPlayerButton.addEventListener("click", function () {
        
     });
