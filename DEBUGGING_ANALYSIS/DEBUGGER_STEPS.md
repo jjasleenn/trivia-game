@@ -32,7 +32,7 @@ Data Flow Integrity:
 3. The HTML table correctly represents the scores.
 
 ### Critical State Analysis:
-Player trust heavily relies on the score display system which transforms stored data into visible achievements for players. The system operates three essential procedures including JSON parsing of localStorage content and score sorting and dynamic DOM element creation because these functions are prone to failures that produce disruptive impacts on gameplay
+Player trust heavily relies on the score display system which transforms stored data into visible achievements for players. The system operates three essential procedures including JSON parsing of localStorage content and score sorting and dynamic DOM element creation because these functions are prone to failures that produce disruptive impacts on gameplay. 
 
 # Debugging Analysis for trivia game
 
