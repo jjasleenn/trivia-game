@@ -153,6 +153,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   
     newPlayerButton.addEventListener("click", function () {
-       
+    document.cookie = "username=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
+    usernameInput.value = "";
+    usernameInput.disabled = false;
+    newPlayerButton.classList.add("hidden");
+ 
     });
 });
