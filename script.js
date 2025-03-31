@@ -96,6 +96,15 @@ document.addEventListener("DOMContentLoaded", function () {
         return "";
     }
 
+    function checkUsername() {
+        const storedUsername = getCookie("username");
+        if (storedUsername) {
+            usernameInput.value = storedUsername;
+            usernameInput.disabled = true;
+            newPlayerButton.classList.remove("hidden");
+        }
+    }
+
     // Event listeners for form submission and new player button
     /**
 	 * Handles the trivia form submission.
