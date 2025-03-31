@@ -105,6 +105,23 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function saveScore(username, score) {
+        const scores = JSON.parse(localStorage.getItem("scores")) || [];
+        scores.push({ username, score });
+        localStorage.setItem("scores", JSON.stringify(scores));
+        displayScores();
+    }
+    
+    function displayScores() {
+        scoreTableBody.innerHTML = "";
+        const scores = JSON.parse(localStorage.getItem("scores")) || [];
+        scores.forEach(({ username, score }) => {
+            const row = document.createElement("tr");
+            row.innerHTML = `<td>${username}</td><td>${score}</td>`;
+            scoreTableBody.appendChild(row);
+        });
+    }
+
     function calculateScore() {
         let score = 0;
         document.querySelectorAll("input[type=radio]:checked").forEach((input) => {
