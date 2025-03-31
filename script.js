@@ -105,6 +105,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function calculateScore() {
+        let score = 0;
+        document.querySelectorAll("input[type=radio]:checked").forEach((input) => {
+            if (input.hasAttribute("data-correct")) score++;
+        });
+        return score;
+    }
+
     // Event listeners for form submission and new player button
     /**
 	 * Handles the trivia form submission.
