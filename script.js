@@ -111,7 +111,16 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("scores", JSON.stringify(scores));
         displayScores();
     }
-
+    
+    function displayScores() {
+        scoreTableBody.innerHTML = "";
+        const scores = JSON.parse(localStorage.getItem("scores")) || [];
+        scores.forEach(({ username, score }) => {
+            const row = document.createElement("tr");
+            row.innerHTML = `<td>${username}</td><td>${score}</td>`;
+            scoreTableBody.appendChild(row);
+        });
+    }
 
     function calculateScore() {
         let score = 0;
